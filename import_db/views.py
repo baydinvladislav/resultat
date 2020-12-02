@@ -28,5 +28,5 @@ def get_db(request):
 def read_data(request, db_id):
     """View the exact database by id"""
     database = Document.objects.get(pk=db_id)
-    import_data(str(database.document), database.id) # documents/data.csv
+    import_data(str(database.document), database.id)
     return render(request, 'import_db/read_data.html', {'database': database})
