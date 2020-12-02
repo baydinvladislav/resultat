@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Document
 from .forms import DocumentForm
@@ -27,6 +27,6 @@ def get_db(request):
 
 def read_data(request, db_id):
     """View the exact database by id"""
-    database = Document.objects.get(pk=db_id)
+    database = get_object_or_404(Document, pk=db_id)
     import_data(str(database.document), database.id)
     return render(request, 'import_db/read_data.html', {'database': database})
