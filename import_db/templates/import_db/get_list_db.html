@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Доступные базы данных{% endblock title %}
+
+{% block content %}
+<h1 class="col-12">Выберите файл базы данных:</h1>
+<ul class="list-group">
+	{% for item in documents %}
+		<li class="list-group-item">
+			<a href="{{ item.get_absolute_url }}">
+			{{ item.name }}</a>
+		</li>
+	{% endfor %}
+</ul>
+{% endblock content %}
+

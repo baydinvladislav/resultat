@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ database.name }}{% endblock title %}
+
+{% block content %}
+<h1 class="col-md-6 offset-md-3">{{ database.name }}</h1>
+	<table class="table table-hover">
+		{% for item in database.projects.all %}
+			<tr>
+				<th scope="col">{{ item.number }}</th>
+				<th scope="col">{{ item.date }}</th>
+				<th scope="col">{{ item.project }}</th>
+				<th scope="col">{{ item.price }}</th>
+				<th scope="col">{{ item.available_numbers }}</th>
+				<th scope="col">{{ item.used }}</th>
+				<th scope="col">{{ item.remainder }}</th>
+				<th scope="col">{{ item.source }}</th>
+				<th scope="col">{{ item.how_collected }}</th>
+				<th scope="col">{{ item.responsible }}</th>
+				<th scope="col">{{ item.link }}</th>
+				<th scope="col">{{ item.comment }}</th>
+				<th scope="col">{{ item.price_per_number }}</th>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock content %}

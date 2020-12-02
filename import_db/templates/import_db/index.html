@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Импорт базы данных{% endblock title %}
+
+{% block content %}
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="btn btn-primary" type="submit">Добавить</button>
+	</form>
+{% endblock content %}
