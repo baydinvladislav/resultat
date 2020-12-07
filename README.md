@@ -1,2 +1,2 @@
 # resultat
-This app displays imported files CSV.
+This app displays imported CSV files.
